@@ -60,12 +60,12 @@ for dolibarrVersion in "${DOLIBARR_VERSIONS[@]}"; do
       tags="${tags} ${currentTag}"
     fi
 
-    buildOptionTags="--tag dolibarr/dolibarr:${currentTag}"
+    buildOptionTags="--tag m0build/dolibarr:${currentTag}"
     if [ "${dolibarrVersion}" != "develop" ]; then
-      buildOptionTags="${buildOptionTags} --tag dolibarr/dolibarr:${dolibarrVersion} --tag dolibarr/dolibarr:${dolibarrMajor}"
+      buildOptionTags="${buildOptionTags} --tag m0build/dolibarr:${dolibarrVersion} --tag m0build/dolibarr:${dolibarrMajor}"
     fi
     if [ "${dolibarrVersion}" = "${DOLIBARR_LATEST_TAG}" ]; then
-      buildOptionTags="${buildOptionTags} --tag dolibarr/dolibarr:latest"
+      buildOptionTags="${buildOptionTags} --tag m0build/dolibarr:latest"
     fi
 
     dir="${BASE_DIR}/images/${currentTag}"
